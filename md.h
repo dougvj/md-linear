@@ -210,7 +210,7 @@ enum flag_bits {
 };
 
 static inline int is_badblock(struct md_rdev *rdev, sector_t s, int sectors,
-			      sector_t *first_bad, int *bad_sectors)
+			      sector_t *first_bad, sector_t *bad_sectors)
 {
 	if (unlikely(rdev->badblocks.count)) {
 		int rv = badblocks_check(&rdev->badblocks, rdev->data_offset + s,
